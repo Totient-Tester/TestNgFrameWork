@@ -584,15 +584,15 @@ public class Xls_Reader {
 		}
 		
 		row=sheet.getRow(testStartsRowNum);
-		System.out.println(testStartsRowNum);
-		System.out.println(rows);
-		System.out.println(columnStartNum);
-		System.out.println(rowStartNum);
+			/*
+			 * System.out.println(testStartsRowNum); System.out.println(rows);
+			 * System.out.println(columnStartNum); System.out.println(rowStartNum);
+			 */
 		for (int rNum = rowStartNum; rNum < (rowStartNum + rows); rNum++) {
 			for (int cNum = 0; cNum < cols; cNum++) {
 				//System.out.print(xls.getCellData("Test Data", cNum, columnStartNum) + "--"+ xls.getCellData("Test Data", cNum, rNum) + " --");
-				System.out.println(getCellData("Test Data", cNum, columnStartNum));
-				System.out.println(getCellData("Test Data", cNum, rNum) + " --");
+				//System.out.println(getCellData("Test Data", cNum, columnStartNum));
+				//System.out.println(getCellData("Test Data", cNum, rNum) + " --");
 				if(getCellData("Test Data", cNum, columnStartNum).equalsIgnoreCase(colName)){
 					
 					int rw =rNum;

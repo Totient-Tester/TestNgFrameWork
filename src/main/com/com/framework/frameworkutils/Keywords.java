@@ -11,6 +11,7 @@ import org.testng.Assert;
 
 import com.framework.basetest.TestBase;
 import com.framework.contants.VariableConstants;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class Keywords extends TestBase{
 	
@@ -96,7 +97,7 @@ public class Keywords extends TestBase{
 
 	private String enter(String objectkeys, String string) throws Exception {
 		
-		log.info("ENTERINNG THE GIVEN FIELD!!!!!!!!");
+		printout("ENTERINNG THE GIVEN FIELD!!!!!!!!");
 		getWebElement(objectkeys).sendKeys(string);
 		
 		return "Pass";
@@ -104,7 +105,7 @@ public class Keywords extends TestBase{
 
 	private String click(String objectkeys) throws Exception {
 
-		log.info("CLICKING ON GIVEN FIELD!!!!!!!!");
+		printout("CLICKING ON GIVEN FIELD!!!!!!!!");
 		getWebElement(objectkeys).click();
 		
 		return "Pass";
@@ -112,7 +113,7 @@ public class Keywords extends TestBase{
 	
 	private String verifyTitle(String datakeys) {
 		
-		log.info("VERIFYING THE TITLE OF THE PAGE !!!!!!!!");
+		printout("VERIFYING THE TITLE OF THE PAGE !!!!!!!!");
 		Assert.assertEquals(driver.getTitle(), datakeys);
 		
 		return "Pass";
@@ -120,14 +121,14 @@ public class Keywords extends TestBase{
 	
 	private String verifyText(String objectkeys, String string) throws Exception {
 		
-		log.info("VERIFYING THE ELEMENT TEXT !!!!!!!!");
+		printout("VERIFYING THE ELEMENT TEXT !!!!!!!!");
 		Assert.assertEquals(getWebElement(objectkeys).getText(), string);
 		return "Pass";
 	}
 
 	private String selectDropdown(String objectkeys, String datakeys) throws Exception {
 		
-		log.info("SELECTING THE GIVEN DROP DOWN FIELDS !!!!!!!!");
+		printout("SELECTING THE GIVEN DROP DOWN FIELDS !!!!!!!!");
 		Select select = new Select(getWebElement(objectkeys));
 		select.selectByValue(datakeys);
 		
@@ -136,7 +137,7 @@ public class Keywords extends TestBase{
 	
 	private String waitForTextPresent(String objectkeys, String datakeys) throws Exception {
 		
-		log.info("WAITING FOR THE GIVEN ELEMENT TEXT PRESENT !!!!!!!!");
+		printout("WAITING FOR THE GIVEN ELEMENT TEXT PRESENT !!!!!!!!");
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.textToBePresentInElement(getWebElement(objectkeys), datakeys));
 		
@@ -145,12 +146,14 @@ public class Keywords extends TestBase{
 	
 	public String close() {
 		
-		log.info("CLOSEING THE OPENDED BROWSER !!!!!!!!");
+		printout("CLOSEING THE OPENDED BROWSER !!!!!!!!");
 		
 		if(driver!=null) {
 			driver.quit();
 		}
+		
 		return "Pass";
 	}
 
+	
 }

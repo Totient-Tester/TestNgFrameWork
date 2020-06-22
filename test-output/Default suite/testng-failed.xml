@@ -6,9 +6,8 @@
       <class name="com.framework.testcases.TC_001_Validate_Login_Page">
         <methods>
           <include name="afterMethod"/>
-          <include name="reportClose"/>
+          <include name="tC_001_Validate_Login_Page" invocation-numbers="0"/>
           <include name="beforeMethod"/>
-          <include name="TC_001_Validate_Login_Page" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.framework.testcases.TC_001_Validate_Login_Page -->
     </classes>
