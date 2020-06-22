@@ -14,6 +14,8 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -51,6 +53,7 @@ public class TestBase implements VariableConstants{
 	
 	public static ExtentTest extentTest;
 	
+	public static Logger log = Logger.getLogger(Keywords.class);
 	
 	//String browserName = "Chrome";
 	
@@ -61,10 +64,11 @@ public class TestBase implements VariableConstants{
 		
 		report = new ExtentReports(System.getProperty("user.dir")+"\\src\\main\\com\\com\\framework\\report\\"+simpleformat.format(calendar.getTime())+".html");
 		
+		PropertyConfigurator.configure("log4j.properties");
+		
 		try {
 			report.addSystemInfo("Host Name", InetAddress.getLocalHost().getHostName()).addSystemInfo("USER NAME", "TESTING TEAM").addSystemInfo("PROJECT NAME", "FREE CRM");
 		
-			
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -72,6 +76,8 @@ public class TestBase implements VariableConstants{
 		
 	}
 	public String openBrowser(String browserName) {
+		
+		log.info("OPENING THE GIVEN BROWSER !!!!!!!!");
 		
 		if(browserName.equalsIgnoreCase("Chrome")) {
 			
@@ -107,6 +113,7 @@ public class TestBase implements VariableConstants{
 	
 	public String navigateURL(String URL) {
 		
+		log.info("NAVIGATING TO THE GIVEN URL!!!!!!!!");
 		driver.get(URL);
 		
 		return "Pass";
@@ -206,13 +213,6 @@ public class TestBase implements VariableConstants{
 		report.endTest(extentTest);
 		report.flush();
 	}
-	
-	@AfterClass
-	public void reportClose() {
-		
-		
-	}
-
 	private void getStatus(ITestResult result) {
 		
 		
@@ -220,7 +220,7 @@ public class TestBase implements VariableConstants{
 			//Keywords.xls.setCellData("Test Data", "Status", TestUtils.getNum(result.getMethod().getMethodName(), Keywords.xls,"Status"), "PASS");
 			xls.setCellDataInparticularCell(result.getMethod().getMethodName(), "Test Data", "Status", "PASS");
 			extentTest.log(LogStatus.PASS, "test is pass "+result.getName());
-			extentTest.log(LogStatus.PASS, extentTest.addScreenCapture(catureScreen()));
+			//extentTest.log(LogStatus.PASS, extentTest.addScreenCapture(catureScreen()));
 		
 		}
 		else if(result.getStatus()==ITestResult.FAILURE){
@@ -228,7 +228,7 @@ public class TestBase implements VariableConstants{
 			xls.setCellDataInparticularCell(result.getMethod().getMethodName(), "Test Data", "Status", "FAIL");
 			extentTest.log(LogStatus.ERROR, result.getName()+"test is failed "+result.getThrowable());
 			extentTest.log(LogStatus.FAIL, result.getName()+"test is failed "+extentTest.addScreenCapture(catureScreen()));
-			extentTest.log(LogStatus.FAIL, extentTest.addScreenCapture(catureScreen()));
+			//extentTest.log(LogStatus.FAIL, extentTest.addScreenCapture(catureScreen()));
 			
 		}
 		else if(result.getStatus()==ITestResult.SKIP){

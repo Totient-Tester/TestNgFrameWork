@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17172" started-at="2020-06-22T06:59:25Z" finished-at="2020-06-22T06:59:42Z">
+  <suite name="Default suite" duration-ms="25163" started-at="2020-06-22T08:02:42Z" finished-at="2020-06-22T08:03:07Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17172" started-at="2020-06-22T06:59:25Z" finished-at="2020-06-22T06:59:42Z">
+    <test name="Default test" duration-ms="25163" started-at="2020-06-22T08:02:42Z" finished-at="2020-06-22T08:03:07Z">
       <class name="com.framework.testcases.TC_001_Validate_Login_Page">
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.framework.testcases.TC_001_Validate_Login_Page@71d44a3]" name="beforeMethod" is-config="true" duration-ms="7" started-at="2020-06-22T12:29:25Z" finished-at="2020-06-22T12:29:25Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.framework.testcases.TC_001_Validate_Login_Page@24aed80c]" name="beforeMethod" is-config="true" duration-ms="17" started-at="2020-06-22T13:32:42Z" finished-at="2020-06-22T13:32:42Z">
           <params>
             <param index="0">
               <value>
@@ -18,75 +18,28 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="TC_001_Validate_Login_Page(java.util.Hashtable)[pri:0, instance:com.framework.testcases.TC_001_Validate_Login_Page@71d44a3]" name="TC_001_Validate_Login_Page" duration-ms="15994" started-at="2020-06-22T12:29:25Z" data-provider="getData" finished-at="2020-06-22T12:29:41Z">
+        <test-method status="PASS" signature="TC_001_Validate_Login_Page(java.util.Hashtable)[pri:0, instance:com.framework.testcases.TC_001_Validate_Login_Page@24aed80c]" name="TC_001_Validate_Login_Page" duration-ms="24694" started-at="2020-06-22T13:32:42Z" data-provider="getData" finished-at="2020-06-22T13:33:07Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Status=PASS, Password=Jakay07@, Runmode=Y, Expected_Result=Jakay N, Email=josephkuruvilla891@gmail.com}]]>
+                <![CDATA[{Status=PASS, Password=Jakay07@, Runmode=Y, Expected_Result=Jakay M, Email=josephkuruvilla891@gmail.com}]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Jakay N] but found [Jakay M]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Jakay N] but found [Jakay M]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at com.framework.frameworkutils.Keywords.verifyText(Keywords.java:113)
-	at com.framework.frameworkutils.Keywords.executeKeywords(Keywords.java:59)
-	at com.framework.testcases.TC_001_Validate_Login_Page.TC_001_Validate_Login_Page(TC_001_Validate_Login_Page.java:26)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_001_Validate_Login_Page -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.framework.testcases.TC_001_Validate_Login_Page@71d44a3]" name="afterMethod" is-config="true" duration-ms="1129" started-at="2020-06-22T12:29:41Z" finished-at="2020-06-22T12:29:42Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.framework.testcases.TC_001_Validate_Login_Page@24aed80c]" name="afterMethod" is-config="true" duration-ms="362" started-at="2020-06-22T13:33:07Z" finished-at="2020-06-22T13:33:07Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=TC_001_Validate_Login_Page status=FAILURE method=TC_001_Validate_Login_Page.TC_001_Validate_Login_Page(java.util.Hashtable)[pri:0, instance:com.framework.testcases.TC_001_Validate_Login_Page@71d44a3] output={null}]]]>
+                <![CDATA[[TestResult name=TC_001_Validate_Login_Page status=SUCCESS method=TC_001_Validate_Login_Page.TC_001_Validate_Login_Page(java.util.Hashtable)[pri:0, instance:com.framework.testcases.TC_001_Validate_Login_Page@24aed80c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="reportClose()[pri:0, instance:com.framework.testcases.TC_001_Validate_Login_Page@71d44a3]" name="reportClose" is-config="true" duration-ms="0" started-at="2020-06-22T12:29:42Z" finished-at="2020-06-22T12:29:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reportClose -->
       </class> <!-- com.framework.testcases.TC_001_Validate_Login_Page -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

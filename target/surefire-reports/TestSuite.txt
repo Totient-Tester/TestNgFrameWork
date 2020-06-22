@@ -1,4 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.91 sec - in TestSuite
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 20.999 sec <<< FAILURE! - in TestSuite
+TC_001_Validate_Login_Page(com.framework.testcases.TC_001_Validate_Login_Page)  Time elapsed: 14.826 sec  <<< FAILURE!
+java.lang.AssertionError: expected [Jakay N] but found [Jakay M]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at org.testng.Assert.assertEquals(Assert.java:200)
+	at com.framework.frameworkutils.Keywords.verifyText(Keywords.java:118)
+	at com.framework.frameworkutils.Keywords.executeKeywords(Keywords.java:62)
+	at com.framework.testcases.TC_001_Validate_Login_Page.TC_001_Validate_Login_Page(TC_001_Validate_Login_Page.java:26)
+

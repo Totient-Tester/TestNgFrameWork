@@ -2,6 +2,8 @@ package com.framework.frameworkutils;
 
 import java.util.Hashtable;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,12 +15,12 @@ import com.framework.contants.VariableConstants;
 public class Keywords extends TestBase{
 	
 	public String testCasesName = "";
-
+	
 	public void executeKeywords(String testcases, Hashtable<String, String> data) throws Exception {
 
 		this.testCasesName = testcases;
 		loadproperties();
-		//PropertyConfigurator.configure("log4j.properties");
+		
 		System.out.println("Executable test cases is :" + testcases);
 
 		String keyword = null;
@@ -94,6 +96,7 @@ public class Keywords extends TestBase{
 
 	private String enter(String objectkeys, String string) throws Exception {
 		
+		log.info("ENTERINNG THE GIVEN FIELD!!!!!!!!");
 		getWebElement(objectkeys).sendKeys(string);
 		
 		return "Pass";
@@ -101,6 +104,7 @@ public class Keywords extends TestBase{
 
 	private String click(String objectkeys) throws Exception {
 
+		log.info("CLICKING ON GIVEN FIELD!!!!!!!!");
 		getWebElement(objectkeys).click();
 		
 		return "Pass";
@@ -108,6 +112,7 @@ public class Keywords extends TestBase{
 	
 	private String verifyTitle(String datakeys) {
 		
+		log.info("VERIFYING THE TITLE OF THE PAGE !!!!!!!!");
 		Assert.assertEquals(driver.getTitle(), datakeys);
 		
 		return "Pass";
@@ -115,12 +120,14 @@ public class Keywords extends TestBase{
 	
 	private String verifyText(String objectkeys, String string) throws Exception {
 		
+		log.info("VERIFYING THE ELEMENT TEXT !!!!!!!!");
 		Assert.assertEquals(getWebElement(objectkeys).getText(), string);
 		return "Pass";
 	}
 
 	private String selectDropdown(String objectkeys, String datakeys) throws Exception {
 		
+		log.info("SELECTING THE GIVEN DROP DOWN FIELDS !!!!!!!!");
 		Select select = new Select(getWebElement(objectkeys));
 		select.selectByValue(datakeys);
 		
@@ -129,6 +136,7 @@ public class Keywords extends TestBase{
 	
 	private String waitForTextPresent(String objectkeys, String datakeys) throws Exception {
 		
+		log.info("WAITING FOR THE GIVEN ELEMENT TEXT PRESENT !!!!!!!!");
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.textToBePresentInElement(getWebElement(objectkeys), datakeys));
 		
@@ -136,6 +144,8 @@ public class Keywords extends TestBase{
 	}
 	
 	public String close() {
+		
+		log.info("CLOSEING THE OPENDED BROWSER !!!!!!!!");
 		
 		if(driver!=null) {
 			driver.quit();
