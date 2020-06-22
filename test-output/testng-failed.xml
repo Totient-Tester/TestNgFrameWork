@@ -5,7 +5,10 @@
     <classes>
       <class name="com.framework.testcases.TC_001_Validate_Login_Page">
         <methods>
-          <include name="validate_Login_Page"/>
+          <include name="afterMethod"/>
+          <include name="reportClose"/>
+          <include name="beforeMethod"/>
+          <include name="TC_001_Validate_Login_Page" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.framework.testcases.TC_001_Validate_Login_Page -->
     </classes>

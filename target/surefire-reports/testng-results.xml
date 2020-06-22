@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="RegressionTest" duration-ms="21472" started-at="2020-06-19T10:06:31Z" finished-at="2020-06-19T10:06:53Z">
+    <groups>
+    </groups>
+    <test name="LoginTest" duration-ms="21472" started-at="2020-06-19T10:06:31Z" finished-at="2020-06-19T10:06:53Z">
+      <class name="com.framework.testcases.TC_001_Validate_Login_Page">
+        <test-method status="PASS" signature="validate_Login_Page()[pri:0, instance:com.framework.testcases.TC_001_Validate_Login_Page@17695df3]" name="validate_Login_Page" duration-ms="21421" started-at="2020-06-19T15:36:32Z" finished-at="2020-06-19T15:36:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_Login_Page -->
+      </class> <!-- com.framework.testcases.TC_001_Validate_Login_Page -->
+    </test> <!-- LoginTest -->
+  </suite> <!-- RegressionTest -->
+</testng-results>

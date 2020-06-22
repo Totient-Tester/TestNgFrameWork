@@ -1,26 +1,36 @@
 package com.framework.testcases;
 
+import java.util.Hashtable;
+
+import org.testng.SkipException;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.framework.basetest.TestBase;
-import com.framework.pompage.LoginPage;
+import com.framework.frameworkutils.Keywords;
+import com.framework.frameworkutils.TestUtils;
 
 public class TC_001_Validate_Login_Page extends TestBase {
 	
 	
-	@Test
-	public void validate_Login_Page() {
+	@Test(dataProvider = "getData")
+	public void TC_001_Validate_Login_Page(Hashtable<String, String> dataa) throws Exception {
 		
-		TestBase testbase = new TestBase();
-		testbase.openBrowser("Chrome");
-		testbase.navigateURL("https://ui.cogmento.com/");
-		
-		LoginPage loginpage = new LoginPage(driver);
-		loginpage.set_email("josephkuruvilla891@gmail.com");
-		loginpage.set_password("Jakay07@");
-		loginpage.clickOnLogin();
+		if(!dataa.get("Runmode").equalsIgnoreCase("Y")) {
+			
+			throw new SkipException("Test Cases execution mode is set by No..!!!!!!!!!!!!");
+		}
 		
 		
+		Keywords k = new Keywords();
+		k.executeKeywords("TC_001_Validate_Login_Page", dataa);
+		
+	}
+	
+	@DataProvider
+	public Object[][] getData(){
+		
+		return TestUtils.getData("TC_001_Validate_Login_Page", xls);
 	}
 
 }
